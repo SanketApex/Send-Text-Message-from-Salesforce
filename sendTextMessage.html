@@ -1,14 +1,17 @@
 <template>
-    <lightning-card>
-        <lightning-input label="Phone Number" value={phoneNumber} onchange={handlePhone} type="tel">
-
-        </lightning-input>
-        <lightning-textarea label="Messge" value={message} onchange={handleMessage}></lightning-textarea>
-        <lightning-button label="Send" onclick={handleSendMessage} variant="brand"></lightning-button>
-    </lightning-card>
-<template if:true={responseMessage}>
-    <div>
-        <lightning-formatted-text value={responseMessage}></lightning-formatted-text>
-    </div>
-</template>
+    
+        <lightning-card title="Job Seeker Form" icon-name="action:new_account">
+            <div class="slds-p-around_medium">
+                <lightning-input label="First Name" value={firstName} onchange={handleInputChange} name="First_Name__c" required></lightning-input>
+                <lightning-input label="Last Name" value={lastName} onchange={handleInputChange} name="Last_Name__c" required></lightning-input>
+                <lightning-input label="Email" type="email" value={email} onchange={handleInputChange} name="Email__c" required></lightning-input>
+                <lightning-input label="Phone Number" type="tel" value={phone} onchange={handleInputChange} name="Phone__c"></lightning-input>
+                <lightning-textarea label="Description" value={description} onchange={handleInputChange} name="Description__c"></lightning-textarea>
+            <lightning-input type="File" label="resume" onchange={handleResumeChange} required></lightning-input>
+    
+                <lightning-button variant="brand" label="Submit" onclick={handleSubmit}></lightning-button>
+            </div>
+        </lightning-card>
+    
+    
 </template>
