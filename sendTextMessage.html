@@ -1,0 +1,14 @@
+<template>
+    <lightning-card>
+        <lightning-input label="Phone Number" value={phoneNumber} onchange={handlePhone} type="tel">
+
+        </lightning-input>
+        <lightning-textarea label="Messge" value={message} onchange={handleMessage}></lightning-textarea>
+        <lightning-button label="Send" onclick={handleSendMessage} variant="brand"></lightning-button>
+    </lightning-card>
+<template if:true={responseMessage}>
+    <div>
+        <lightning-formatted-text value={responseMessage}></lightning-formatted-text>
+    </div>
+</template>
+</template>
